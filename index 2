@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Salário</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; max-width: 600px; margin: auto; }
+    label { display: block; margin-top: 1rem; }
+    input, select { width: 100%; padding: 0.5rem; margin-top: 0.25rem; }
+    button { margin-top: 1.5rem; padding: 0.75rem 1.5rem; }
+    .resultado { margin-top: 2rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Calculadora de Salário</h1>
+
+  <label>Salário Base</label>
+  <input type="number" id="base" value="834.5">
+
+  <label>Subsídio de Turno</label>
+  <input type="number" id="turno" value="206">
+
+  <label>Subsídio de Transporte</label>
+  <input type="number" id="transporte" value="75">
+
+  <label>Dias de Noite</label>
+  <input type="number" id="diasNoite" value="0">
+
+  <label>Dias de Tarde</label>
+  <input type="number" id="diasTarde" value="0">
+
+  <label>Dias com Sub. Alimentação</label>
+  <input type="number" id="diasAlimentacao" value="0">
+
+  <label>Dias em Feriado/Folga</label>
+  <input type="number" id="diasExtra" value="0">
+
+  <label>Dias de Formação (On Job)</label>
+  <input type="number" id="diasFormacao" value="0">
+
+  <label>IRS Jovem - Grau de Isenção</label>
+  <select id="irsJovem">
+    <option value="1">Não (0% de isenção)</option>
+    <option value="0.25">Sim - 75% de isenção</option>
+    <option value="0.5">Sim - 50% de isenção</option>
+    <option value="0.75">Sim - 25% de isenção</option>
+    <option value="0">Sim - 100% de isenção</option>
+  </select>
+
+  <button onclick="calcularSalario()">Calcular</button>
+
+  <div class="resultado" id="resultado"></div>
+
+  <script>
+    function calcularSalario() {
+      const base = parseFloat(document.getElementById('base').value);
+      const turno = parseFloat(document.getElementById('turno').value);
+      const transporte = parseFloat(document.getElementById('transporte').value);
+      const diasNoite = parseFloat(document.getElementById('diasNoite').value);
+      const diasTarde = parseFloat(document.getElementById('diasTarde').value);
+      const diasAlimentacao = parseFloat(document.getElementById('diasAlimentacao').value);
+      const diasExtra = parseFloat(document.getElementById('diasExtra').value);
+      const diasFormacao = parseFloat(document.getElementById('diasFormacao').value);
+      const irsPercent = parseFloat(document.getElementById('irsJovem').value);
+
+      const horasNoturnas = diasNoite * 4.5 + diasTarde * 2.5;
+      const horasPagas = Math.max(0, horasNoturnas - 20);
+
+      const totalNoturno = horasPagas * 5.13;
+      const totalAlimentacao = diasAlimentacao * 8.7;
+      const totalExtra = diasExtra * 105.6;
+      const totalFormacao = diasFormacao * 10;
+
+      const bruto = base + turno + transporte + totalNoturno + totalAlimentacao + totalExtra + totalFormacao;
+      const ss = bruto * 0.11;
+      const irs_base = bruto * 0.25;
+      const irs = irs_base * irsPercent;
+      const liquido = bruto - ss - irs;
+
+      const poupanca = 350;
+      const investimentos = 175;
+      const contaConjunta = 200;
+      const restante = liquido - (poupanca + investimentos + contaConjunta);
+
+      document.getElementById('resultado').innerHTML = `
+        <p>Salário Bruto: <strong>${bruto.toFixed(2)} €</strong></p>
+        <p>Desconto SS: <strong>${ss.toFixed(2)} €</strong></p>
+        <p>Retenção IRS: <strong>${irs.toFixed(2)} €</strong></p>
+        <p><strong>Salário Líquido: ${liquido.toFixed(2)} €</strong></p>
+        <hr>
+        <p>Poupança: ${poupanca} €</p>
+        <p>Investimentos: ${investimentos} €</p>
+        <p>Conta Conjunta: ${contaConjunta} €</p>
+        <p><strong>Restante Disponível: ${restante.toFixed(2)} €</strong></p>
+      `;
+    }
+  </script>
+</body>
+</html>
