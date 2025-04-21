@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="pt"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Calculadora de Salário&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body { font-family: Arial, sans-serif; padding: 2rem; max-width: 600px; margin: auto; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>label { display: block; margin-top: 1rem; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input, select { width: 100%; padding: 0.5rem; margin-top: 0.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button { margin-top: 1.5rem; padding: 0.75rem 1.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.resultado { margin-top: 2rem; font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Calculadora de Salário&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;Salário Base&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="base" value="834.5"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;Subsídio de Turno&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="turno" value="206"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;Subsídio de Transporte&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="transporte" value="75"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;Dias de Noite&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="diasNoite" value="0"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;Dias de Tarde&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="diasTarde" value="0"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;Dias com Sub. Alimentação&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="diasAlimentacao" value="0"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;Dias em Feriado/Folga&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="diasExtra" value="0"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;Dias de Formação (On Job)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="diasFormacao" value="0"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;label&gt;IRS Jovem - Grau de Isenção&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="irsJovem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="1"&gt;Não (0% de isenção)&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="0.25"&gt;Sim - 75% de isenção&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="0.5"&gt;Sim - 50% de isenção&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="0.75"&gt;Sim - 25% de isenção&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="0"&gt;Sim - 100% de isenção&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="calcularSalario()"&gt;Calcular&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="resultado" id="resultado"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function calcularSalario() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const base = parseFloat(document.getElementById('base').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const turno = parseFloat(document.getElementById('turno').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const transporte = parseFloat(document.getElementById('transporte').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const diasNoite = parseFloat(document.getElementById('diasNoite').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const diasTarde = parseFloat(document.getElementById('diasTarde').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const diasAlimentacao = parseFloat(document.getElementById('diasAlimentacao').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const diasExtra = parseFloat(document.getElementById('diasExtra').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const diasFormacao = parseFloat(document.getElementById('diasFormacao').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const irsPercent = parseFloat(document.getElementById('irsJovem').value);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const horasNoturnas = diasNoite * 4.5 + diasTarde * 2.5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const horasPagas = Math.max(0, horasNoturnas - 20);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const totalNoturno = horasPagas * 5.13;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const totalAlimentacao = diasAlimentacao * 8.7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const totalExtra = diasExtra * 105.6;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const totalFormacao = diasFormacao * 10;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const bruto = base + turno + transporte + totalNoturno + totalAlimentacao + totalExtra + totalFormacao;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const ss = bruto * 0.11;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const irs_base = bruto * 0.25;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const irs = irs_base * irsPercent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const liquido = bruto - ss - irs;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const poupanca = 350;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const investimentos = 175;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const contaConjunta = 200;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const restante = liquido - (poupanca + investimentos + contaConjunta);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('resultado').innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Salário Bruto: &lt;strong&gt;${bruto.toFixed(2)} €&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Desconto SS: &lt;strong&gt;${ss.toFixed(2)} €&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Retenção IRS: &lt;strong&gt;${irs.toFixed(2)} €&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Salário Líquido: ${liquido.toFixed(2)} €&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;hr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Poupança: ${poupanca} €&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Investimentos: ${investimentos} €&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Conta Conjunta: ${contaConjunta} €&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Restante Disponível: ${restante.toFixed(2)} €&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
